@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\HangoSoft\\india_sweet_house\\india_sweet_house\\india_sweet_house\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
+            "outputFile": "D:\\HangoSoft\\india_sweet_house\\Sweet House\\india_sweet_house\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lt\\values-lt.xml",
             "map": [
                 {
                     "source": "C:\\Users\\devi\\.gradle\\caches\\transforms-3\\a5da391e889210c4d2ba1ae6744f6033\\transformed\\appcompat-1.4.1\\res\\values-lt\\values-lt.xml",

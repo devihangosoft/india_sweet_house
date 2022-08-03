@@ -29,32 +29,13 @@ import Login from './src/Screens/Login/Login';
 
 import { Provider } from 'react-redux';
 import Store from './src/redux/Store';
+import {Provider as PaperProvider } from 'react-native-paper';
 
-const Section = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+import Card1 from './src/Components/Elements/Card';
+import AppHeader from './src/Components/Elements/AppHeader';
+import Sidemenu from './src/Components/Elements/Sidemenu';
+import Orders from './src/Components/Orders/Orders';
+import Modals from './src/Components/Elements/Modal';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -63,41 +44,35 @@ const App = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+
   return (
     <Provider store={Store}>
+    <PaperProvider>
 
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
+        style={styles.container}>
+        <Modals />
 
         <Login />
-
+    {/* <Card1 /> */}
+    {/* <AppHeader /> */}
+    {/* <Sidemenu /> */}
+    {/* <Orders /> */}
 
       </ScrollView>
     </SafeAreaView>
+    </PaperProvider>
     </Provider>
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+ container:{
+  paddingHorizontal:15
+ }
 });
 
 export default App;
