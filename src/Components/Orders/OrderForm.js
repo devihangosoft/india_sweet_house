@@ -6,9 +6,9 @@ import React from 'react';
  export const OrderForm = props => (
    <Formik
      initialValues={{ email: '' }}
-     onSubmit={values => console.log(values)}
-     
+     onSubmit={values => console.log(values)}     
    >
+   
      {({ handleChange, handleBlur, handleSubmit, values }) => (
        <View style={{backgroundColor:'#fff',
        borderRadius:10,

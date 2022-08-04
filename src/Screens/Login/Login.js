@@ -9,7 +9,7 @@ import { StyleSheet, Text, View, FlatList, Button, ScrollView, TouchableOpacity,
 // import Modal from "react-native-modal";
 
 import Modals from "../../Components/Elements/Modal";
-
+import Container from "../../Components/Elements/Container";
 import {
     CodeField,
     Cursor,
@@ -21,7 +21,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { openModal } from "../../redux/reducers/modalreducer";
 import { OrderForm } from "../../Components/Orders/OrderForm";
 import { Formik } from 'formik';
-
+import Icon from 'react-native-vector-icons/Feather';
 
 
 export default function Login() {
@@ -30,6 +30,8 @@ export default function Login() {
     const handleShow = () => {
         dispatch(openModal(<OrderForm />));
     }
+
+    const [hidePass, sethidePass] = useState(true);
 
     const windowHeight = Dimensions.get('window').height;
 
@@ -49,7 +51,7 @@ export default function Login() {
             </View> */}
 
 
-
+            <Container>
 
             <View style={{ height:windowHeight , display:'flex', flexDirection:'column', justifyContent:"center", }}>
             
@@ -75,13 +77,24 @@ export default function Login() {
                                 placeholder="Enter your email"
                                 style={styles.Textfield}
                             />
+                            <View>
+
                             <TextInput
                                 onChangeText={handleChange('password')}
                                 onBlur={handleBlur('password')}
                                 value={values.password}
                                 placeholder="Enter your password"
                                 style={styles.Textfield}
-                            />
+                                secureTextEntry={hidePass}
+                            >
+
+                            </TextInput>
+                            
+                            <TouchableOpacity onPress={()=>{sethidePass(!hidePass)}} style={styles.passEye}>
+                                <Icon name={hidePass?'eye':'eye-off'} size={20} color="orange" style={{margin:10}} />                                
+                            </TouchableOpacity>
+
+                            </View>
                             
 
                         
@@ -112,6 +125,8 @@ export default function Login() {
 
             <View style={{ height: 100, width: '100%' }}>
             </View>
+
+            </Container>
         </ScrollView>
 
     </>);
@@ -125,5 +140,10 @@ const styles = StyleSheet.create({
         borderBottomWidth:1,
         borderColor:'#cdcdcd',
         marginBottom:20
+    },
+    passEye:{
+        position:"relative",
+        
+        
     }
 });

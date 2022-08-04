@@ -63,16 +63,16 @@ const App = () => {
           style={styles.container}>
           <Modals />
 
-          {/* <Login /> */}
-          {/* <Card1 /> */}
-          {/* <AppHeader /> */}
-          {/* <Sidemenu /> */}
+          
+          <Login />
           {/* <Orders /> */}
+          {/* <Card1 /> */}
+          {/* <Sidemenu /> */}
           {/* <Datatables/> */}
           {/* <DialogBox/> */}
-          <OrderList/>
+          {/* <OrderList/> */}
+          {/* <SnackBars /> */}
 
-          <SnackBars />
         </ScrollView>
       </SafeAreaView>
     </Provider>
@@ -81,7 +81,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 15
+    // paddingHorizontal: 15
   }
 });
 
