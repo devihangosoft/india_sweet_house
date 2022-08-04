@@ -5,7 +5,7 @@ import { OrderForm } from './OrderForm';
 const Orders = () => {
     return (
         <View>
-            <OrderForm />
+            {/* <OrderForm /> */}
         </View>
     );
 }
