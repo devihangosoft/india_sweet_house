@@ -1,12 +1,16 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
-
+import { View, StyleSheet } from 'react-native';
+import { Text,Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 // const LeftContent = props => <Avatar.Icon {...props} icon="folder" />
 const LeftContent = props => <Text {...props} icon="folder">1</Text>
 const RightContent = props => <Text>hello</Text>
+import { useTheme } from 'react-native-paper';
 
-const Card1 = () => (
+const Card1 = () => {
+  const { colors } = useTheme();
+  return(
+  
+
   // <Card>
   //   <Card.Title title="Card Title" subtitle="Card Subtitle" left={LeftContent} 
   //     right={RightContent}
@@ -39,11 +43,16 @@ const Card1 = () => (
 </View>
 
     <View style={styles.rightSide}>
+    <Button raised theme={{ roundness: 3 }}>
+      Press me
+    </Button>
       <Text style={styles.edit}>Edit</Text>
-      <Text>Delete</Text>
+      <Text style={{ color: colors.secondary }}>Delete</Text>
     </View>
   </View>
-);
+)
+
+};
 
 export default Card1;
 

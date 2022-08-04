@@ -29,13 +29,18 @@ import Login from './src/Screens/Login/Login';
 
 import { Provider } from 'react-redux';
 import Store from './src/redux/Store';
-import {Provider as PaperProvider } from 'react-native-paper';
+
 
 import Card1 from './src/Components/Elements/Card';
 import AppHeader from './src/Components/Elements/AppHeader';
 import Sidemenu from './src/Components/Elements/Sidemenu';
 import Orders from './src/Components/Orders/Orders';
 import Modals from './src/Components/Elements/Modal';
+import Datatables from './src/Components/Elements/Datatables';
+import DialogBox from './src/Components/Elements/DialogBox';
+import SnackBars from './src/Components/Elements/Snackbars';
+import OrderList from "./src/Components/Orders/OrderList"
+
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -46,33 +51,38 @@ const App = () => {
 
 
   return (
+
+
     <Provider store={Store}>
-    <PaperProvider>
 
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={styles.container}>
-        <Modals />
 
-        <Login />
-    {/* <Card1 /> */}
-    {/* <AppHeader /> */}
-    {/* <Sidemenu /> */}
-    {/* <Orders /> */}
+      <SafeAreaView style={backgroundStyle}>
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.container}>
+          <Modals />
 
-      </ScrollView>
-    </SafeAreaView>
-    </PaperProvider>
+          {/* <Login /> */}
+          {/* <Card1 /> */}
+          {/* <AppHeader /> */}
+          {/* <Sidemenu /> */}
+          {/* <Orders /> */}
+          {/* <Datatables/> */}
+          {/* <DialogBox/> */}
+          <OrderList/>
+
+          <SnackBars />
+        </ScrollView>
+      </SafeAreaView>
     </Provider>
   );
 };
 
 const styles = StyleSheet.create({
- container:{
-  paddingHorizontal:15
- }
+  container: {
+    paddingHorizontal: 15
+  }
 });
 
 export default App;
