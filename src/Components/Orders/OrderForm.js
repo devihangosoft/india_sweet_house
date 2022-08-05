@@ -33,8 +33,8 @@ import React from 'react';
            placeholder="Enter user address"
          />
          {/* <Button onPress={handleSubmit} title="Submit" /> */}
-         <Button color='#FEAF00' icon="camera" mode="contained" onPress={() => console.log('Pressed')}>
-    Press me
+         <Button color='#FEAF00' mode="contained" onPress={() => console.log('Pressed')}>
+Submit
   </Button>
        </View>
      )}
