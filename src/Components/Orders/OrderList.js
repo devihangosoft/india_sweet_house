@@ -1,44 +1,35 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import { Text, Button, IconButton } from 'react-native-paper';
-import { OrderForm } from './OrderForm';
+import { Text } from 'react-native-paper';
+// import { OrderForm } from './OrderForm';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 import Icon from 'react-native-vector-icons/Feather';
 
-const OrderList = () => {
+const OrderList = ({navigation}) => {
   return (
     <>
       <View style={styles.listBox} >
-
         <View style={styles.leftwithNo}>
           <View style={styles.leftSide}>
-            <Text style={styles.head}>Title</Text>
-            <Text style={styles.subtitle}>04-Aug-22 12:43 PM</Text>
-            
-            {/* <Button mode='contained' >Accepted</Button> */}
+            <Text style={styles.head}>My Order 1</Text>
+            <Text style={styles.subtitle}>04-Aug-22 12:43 PM</Text>  
             <View style={styles.smallbtn}>
               <Text style={styles.btntext}>Accepted</Text>
             </View>
-
-
           </View>
         </View>
-
         <View style={styles.rightSide}>
-
-          <TouchableOpacity>
+          {/* <TouchableOpacity>
           <Icon name="trash" size={20} color="red" style={{ marginRight: 20 }} />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <TouchableOpacity>
-          <Icon name="edit" size={20} color="blue" />
+          <Icon name="edit" size={20} color="blue" style={{ marginRight: 20 }}/>
           </TouchableOpacity>
-          {/* <Icon name="eye" size={20} color="orange" style={{margin:10}} /> */}
-        </View>
-
-        
+          <TouchableOpacity onPress={()=>navigation.navigate('orderdetails')}>
+          <Icon name="eye" size={20} color="orange"  />
+          </TouchableOpacity>
+        </View>        
       </View>
-
-
     </>
   );
 }
@@ -92,9 +83,10 @@ const styles = StyleSheet.create({
     display:'flex',
     width:80,
     paddingHorizontal:10,
-    paddingVertical:4,
     borderRadius:10,
-    marginTop:5
+    marginTop:10,
+    paddingTop:1,
+    paddingBottom:4
   },
   btntext:{
     color:'white',
