@@ -7,7 +7,7 @@ import AppHeader from '../Elements/AppHeader';
 import Container from '../Elements/Container';
 
 const Orders = ({navigation}) => {
-
+    
     return (
         <>
             <AppHeader title={"Orders"} navigation={navigation}/>

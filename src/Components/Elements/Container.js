@@ -1,8 +1,9 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 
 const Container = (props) => {
     return (
+        <ScrollView>
         <View style={{
             padding:15,
         }}>
@@ -10,6 +11,7 @@ const Container = (props) => {
                 props.children
             }
         </View>
+        </ScrollView>
     );
 }
 

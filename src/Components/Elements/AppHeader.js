@@ -4,7 +4,7 @@ import { Appbar } from 'react-native-paper';
 
 const AppHeader = ({navigation, title}) => {  
   const _goBack = () => navigation.goBack();
-  const _handleMore = () => console.log('Shown more');
+  const _handleMore = () => navigation.openDrawer();
   // const _handleSearch = () => console.log('Searching');
 
   return (

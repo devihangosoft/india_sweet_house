@@ -6,6 +6,7 @@ import { openModal } from "../../redux/reducers/modalreducer";
 import { OrderForm } from "../../Components/Orders/OrderForm";
 import { Formik } from 'formik';
 import Icon from 'react-native-vector-icons/Feather';
+import { Sidemenu } from "../../Components/Elements/Sidemenu";
 
 export default function Login({navigation}) {
     const dispatch = useDispatch();
@@ -15,14 +16,14 @@ export default function Login({navigation}) {
     const [hidePass, sethidePass] = useState(true);
     const windowHeight = Dimensions.get('window').height;
 
-    return (<>
-        <ScrollView>
+    return (<>        
             {/* <View style={{ marginHorizontal: 25, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 40 }}>
                 <Image
                     style={{ height: 201, width: 269 }}
                     source={require('../../../assets/loginpic.png')}
                 />
             </View> */}
+            
             <Container>
                 <View style={{ height: windowHeight, display: 'flex', flexDirection: 'column', justifyContent: "center", }}>
                     <Text style={{ fontSize: 30, fontFamily: 'Poppins-Regular', fontWeight: '700', color: '#1D1617', textAlign: "center", textTransform: "uppercase" }}>Login</Text>
@@ -66,7 +67,7 @@ export default function Login({navigation}) {
                                 <View style={{ alignItems: 'center' }}>
                                     <View style={{ flexDirection: 'row', marginTop: 10 }}>
                                         <Text style={{ color: '#C0C0C0', fontSize: 14, fontFamily: 'Poppins-Regular', fontWeight: '500' }}>New user ?</Text>
-                                       <TouchableOpacity onPress={()=>navigation.navigate('orders')}>
+                                       <TouchableOpacity onPress={()=>navigation.navigate('Orders')}>
                                        <Text style={{ color: '#FEAF00', fontSize: 14, fontFamily: 'Poppins-Regular', fontWeight: '600', marginLeft: 5 }} >Register</Text>
                                         </TouchableOpacity>
                                     </View>
@@ -75,8 +76,8 @@ export default function Login({navigation}) {
                         )}
                     </Formik>
                 </View>
-            </Container>
-        </ScrollView>
+            </Container>    
+             
     </>);
 }
 

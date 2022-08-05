@@ -25,7 +25,7 @@ const OrderList = ({navigation}) => {
           <TouchableOpacity>
           <Icon name="edit" size={20} color="blue" style={{ marginRight: 20 }}/>
           </TouchableOpacity>
-          <TouchableOpacity onPress={()=>navigation.navigate('orderdetails')}>
+          <TouchableOpacity onPress={()=>navigation.navigate('OrderDetails')}>
           <Icon name="eye" size={20} color="orange"  />
           </TouchableOpacity>
         </View>        

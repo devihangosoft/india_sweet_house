@@ -18,14 +18,9 @@ import {
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+
 import Login from './src/Screens/Login/Login';
+
 
 import { Provider } from 'react-redux';
 import Store from './src/redux/Store';
@@ -43,46 +38,52 @@ import OrderList from "./src/Components/Orders/OrderList"
 import OrderDetails from './src/Components/Orders/OrderDetail';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 const Stack = createStackNavigator();
+
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+  const Drawer = createDrawerNavigator();
 
   return (
     <Provider store={Store}>
       <NavigationContainer>
-        <Stack.Navigator >
-          <Stack.Screen name="login" component={Login} options={{ headerShown: false }} />
-          <Stack.Screen name="orders" component={Orders} options={{ headerShown: false }} />
-          <Stack.Screen name="orderdetails" component={OrderDetails} options={{ headerShown: false }} />
-        </Stack.Navigator>
+
+        {/* <Stack.Navigator >          
+          <Stack.Screen name="Home" component={HomeStack} options={{ headerShown: false }} />
+          <Stack.Screen name="Orders" component={Orders} options={{ headerShown: false }} />
+          <Stack.Screen name="OrderDetails" component={OrderDetails} options={{ headerShown: false }} />
+        </Stack.Navigator>  */}
+
+        <Drawer.Navigator initialRouteName="Login">
+          <Drawer.Screen name="Login" component={Login} options={{ headerShown: false }} />
+          <Drawer.Screen name="Orders" component={Orders} options={{ headerShown: false }} />
+          <Stack.Screen name="OrderDetails" component={OrderDetails} options={{ headerShown: false, drawerItemStyle: { height: 0 } }} />
+        </Drawer.Navigator>
+
       </NavigationContainer>
 
 
-        
-          <SafeAreaView style={styles.container}>
-            <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-            <ScrollView
-              contentInsetAdjustmentBehavior="automatic"
-              style={styles.container}>
-                   
-         <Modals/>
-              {/* <Orders /> */}
-              {/* <Card1 /> */}
-              {/* <Sidemenu /> */}
-              {/* <Datatables/> */}
-              {/* <DialogBox/> */}
-              {/* <OrderList/> */}
-              {/* <SnackBars /> */}
-    {/* <OrderDetails/>*/}
-            </ScrollView>
-          </SafeAreaView> 
-        </Provider>
+
+      <SafeAreaView style={styles.container}>
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        <ScrollView
+          contentInsetAdjustmentBehavior="automatic"
+          style={styles.container}>
+
+          <Modals />
+          {/* <Orders /> */}
+          {/* <Card1 /> */}
+          {/* <Sidemenu /> */}
+          {/* <Datatables/> */}
+          {/* <DialogBox/> */}
+          {/* <OrderList/> */}
+          {/* <SnackBars /> */}
+          {/* <OrderDetails/>*/}
+        </ScrollView>
+      </SafeAreaView>
+    </Provider>
 
   );
 };
