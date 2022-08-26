@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import  modalReducer  from './reducers/modalreducer';
-import pagetitleReducuer from './reducers/pagetitleReducuer';
+import userReducuer from './reducers/userReducuer';
 
 const Store = configureStore({
   reducer: {    
     modalReducer : modalReducer,  
-    pagetitleReducuer: pagetitleReducuer,  
+    userReducuer: userReducuer,  
   },
 
   middleware: (getDefaultMiddleware) =>

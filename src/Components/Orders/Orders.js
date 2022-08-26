@@ -14,6 +14,9 @@ const Orders = ({navigation}) => {
             <Container>
                 <Pagetitle />
                 <OrderList navigation={navigation}/>
+                <OrderList navigation={navigation}/>
+                <OrderList navigation={navigation}/>
+                <OrderList navigation={navigation}/>
             </Container>
         </>
     );
